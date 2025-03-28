@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import hamburgerIcon from "../../public/assets/icon-hamburger.svg";
 import imageIcon from "../../public/assets/icon-chevron.svg";
 import { Link } from "react-router-dom";
@@ -40,7 +40,10 @@ export default function Header() {
                     }}
                     src={planet.images.planet}
                   />
-                  <li key={planet.name}>
+                  <li
+                    key={planet.name}
+                    className="text-[#fff] text-[15px] font-bold tracking-[1.36px]"
+                  >
                     <Link to={planet.name}>{planet.name}</Link>
                   </li>
                 </div>
