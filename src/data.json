@@ -33,6 +33,14 @@
         "mobile": {
           "width": "111px",
           "height": "111px"
+        },
+        "tablet": {
+          "width": "184px",
+          "height": "184px"
+        },
+        "desktop": {
+          "width": "290px",
+          "height": "290px"
         }
       }
     }
@@ -71,6 +79,14 @@
         "mobile": {
           "width": "154px",
           "height": "154px"
+        },
+        "tablet": {
+          "width": "253px",
+          "height": "253px"
+        },
+        "desktop": {
+          "width": "400px",
+          "height": "400px"
         }
       }
     }
@@ -109,6 +125,14 @@
         "mobile": {
           "width": "173px",
           "height": "173px"
+        },
+        "tablet": {
+          "width": "285px",
+          "height": "285px"
+        },
+        "desktop": {
+          "width": "450px",
+          "height": "450px"
         }
       }
     }
@@ -147,6 +171,14 @@
         "mobile": {
           "width": "129px",
           "height": "129px"
+        },
+        "tablet": {
+          "width": "213px",
+          "height": "213px"
+        },
+        "desktop": {
+          "width": "336px",
+          "height": "336px"
         }
       }
     }
@@ -185,6 +217,14 @@
         "mobile": {
           "width": "224px",
           "height": "224px"
+        },
+        "tablet": {
+          "width": "369px",
+          "height": "369px"
+        },
+        "desktop": {
+          "width": "582px",
+          "height": "582px"
         }
       }
     }
@@ -223,6 +263,14 @@
         "mobile": {
           "width": "256px",
           "height": "256px"
+        },
+        "tablet": {
+          "width": "422px",
+          "height": "422px"
+        },
+        "desktop": {
+          "width": "666.09px",
+          "height": "666.09px"
         }
       }
     }
@@ -261,6 +309,14 @@
         "mobile": {
           "width": "176px",
           "height": "176px"
+        },
+        "tablet": {
+          "width": "290px",
+          "height": "290px"
+        },
+        "desktop": {
+          "width": "458px",
+          "height": "458px"
         }
       }
     }
@@ -299,6 +355,14 @@
         "mobile": {
           "width": "173px",
           "height": "173px"
+        },
+        "tablet": {
+          "width": "285px",
+          "height": "285px"
+        },
+        "desktop": {
+          "width": "450px",
+          "height": "450px"
         }
       }
     }
