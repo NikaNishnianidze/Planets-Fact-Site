@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-nav: #070724;
+
+  --breakpoint-mb: 375px;
+  --breakpoint-tb: 768px;
+  --breakpoint-dk: 1440px;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 
 body {

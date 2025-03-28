@@ -22,16 +22,22 @@ export default function Header() {
             src={hamburgerIcon}
             alt="hamburger icon"
             onClick={toggleNavigation}
+            className="tb:hidden"
           />
         </div>
       </header>
       <nav
-        className={`${show ? "block" : "hidden"} px-[24px] pt-[24px] mb-[67px]`}
+        className={`${
+          show ? "block" : "hidden"
+        } tb:block px-[24px] pt-[24px] mb-[67px] bg-nav`}
       >
         <ul>
           {data.map((planet) => {
             return (
-              <div className="planents flex flex-row justify-between items-center  border-b-[1px] border-b-[#FFFFFF]/20 py-[20px]">
+              <div
+                key={planet.name}
+                className="planents flex flex-row justify-between items-center  border-b-[1px] border-b-[#FFFFFF]/20 py-[20px]"
+              >
                 <div className="planet-name flex flex-row gap-[25px]">
                   <img
                     style={{
