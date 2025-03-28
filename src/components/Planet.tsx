@@ -85,11 +85,34 @@ export default function Planet() {
 
         <div className="planet-image flex flex-col items-center justify-center mt-[95px] ">
           <img
+            className={`${
+              overviewClicked || surfaceClicked ? "block" : "hidden"
+            }`}
             style={{
               width: planet?.images.sizes.mobile.width,
               height: planet?.images.sizes.mobile.height,
             }}
             src={planet?.images.planet}
+            alt="planet image"
+          />
+          <img
+            className={`${structureClicked ? "block" : "hidden"}`}
+            style={{
+              width: planet?.images.sizes.mobile.width,
+              height: planet?.images.sizes.mobile.height,
+            }}
+            src={planet?.images.internal}
+            alt="planet image"
+          />
+          <img
+            className={`${
+              surfaceClicked ? "block" : "hidden"
+            } absolute top-[370px]`}
+            style={{
+              width: "70px",
+              height: "85px",
+            }}
+            src={planet?.images.geology}
             alt="planet image"
           />
         </div>
@@ -179,10 +202,12 @@ export default function Planet() {
 
       {/*}    after mobile build        {*/}
 
-      <div className="big mb:hidden tb:block dk:hidden">
+      <div className="big mb:hidden tb:block dk:block">
         <div className="planet-image flex flex-col items-center justify-center mt-[95px] tb:mt-[112px]">
           <img
-            className="block md:hidden"
+            className={`${
+              overviewClicked || surfaceClicked ? "block" : "hidden"
+            }  tb:hidden`}
             style={{
               width: planet?.images.sizes.mobile.width,
               height: planet?.images.sizes.mobile.height,
@@ -190,10 +215,32 @@ export default function Planet() {
             src={planet?.images.planet}
             alt="planet image"
           />
+          <img
+            className={`${structureClicked ? "block" : "hidden"}`}
+            style={{
+              width: planet?.images.sizes.tablet.width,
+              height: planet?.images.sizes.tablet.height,
+            }}
+            src={planet?.images.internal}
+            alt="planet image"
+          />
+          <img
+            className={`${
+              surfaceClicked ? "block" : "hidden"
+            } absolute top-[550px]`}
+            style={{
+              width: "130px",
+              height: "160px",
+            }}
+            src={planet?.images.geology}
+            alt="planet image"
+          />
 
           {/* Tablet Image */}
           <img
-            className="hidden md:block lg:hidden"
+            className={`dk:hidden ${
+              structureClicked ? "tb:hidden" : "tb:block"
+            }`}
             style={{
               width: planet?.images.sizes.tablet.width,
               height: planet?.images.sizes.tablet.height,
@@ -204,7 +251,9 @@ export default function Planet() {
 
           {/* Desktop Image */}
           <img
-            className="hidden lg:block"
+            className={`hidden dk:block ${
+              structureClicked ? "hidden" : "block"
+            }`}
             style={{
               width: planet?.images.sizes.desktop.width,
               height: planet?.images.sizes.desktop.height,
@@ -214,7 +263,7 @@ export default function Planet() {
           />
         </div>
         <div className="position-div flex flex-row items-center justify-between tb:mt-[130px] tb:px-[40px]">
-          <div className="planet-info flex flex-col items-center justify-center gap-[16px] mt-[98px] px-[24px] tb:mt-0 tb:items-start tb:px-0">
+          <div className="planet-info flex flex-col items-center justify-center gap-[16px] tb:gap-0 mt-[98px] px-[24px] tb:mt-0 tb:items-start tb:px-0">
             <h2 className="text-[#fff] text-[40px] font-normal leading-[100%] mb-[16px] tb:text-[48px]">
               {planet?.name}
             </h2>
@@ -227,11 +276,13 @@ export default function Planet() {
             <p className="w-[327px] text-center tb:text-left font-normal text-[#fff]/50 text-[13.3px] leading-[22px]">
               {surfaceClicked ? planet?.geology.content : ""}
             </p>
-            <div className="link flex flex-row items-center gap-[4px] ">
-              <p className="text-[12px] text-[#fff]/50 font-normal">Source :</p>
+            <div className="link flex flex-row items-center justify-center gap-[4px] tb:mt-[32px]">
+              <p className="text-[12px] text-[#fff]/50 font-normal ">
+                Source :
+              </p>
               {overviewClicked ? (
                 <a
-                  className="text-[12px] text-[#fff]/50 font-bold"
+                  className="text-[12px] text-[#fff]/50 font-bold "
                   href={planet?.overview.source}
                 >
                   Wikipedia
@@ -259,7 +310,7 @@ export default function Planet() {
               ) : (
                 ""
               )}
-              <img src={sourceIcon} alt="link image" />
+              <img src={sourceIcon} alt="link image " />
             </div>
           </div>
           <div
@@ -267,9 +318,15 @@ export default function Planet() {
           >
             <div className="buttons flex flex-col items-center ">
               <button
+                style={{
+                  backgroundColor: overviewClicked
+                    ? planet?.rectangleColor
+                    : "",
+                  border: overviewClicked ? planet?.rectangleColor : "",
+                }}
                 className={`${
                   overviewClicked ? "text-[#FFFFFF]" : "text-[#FFFFFF]/50"
-                } tb:flex tb:flex-row tb:py-[12px] tb:pl-[28px] tb:border-[1px] tb:w-[281px] tb:items-start`}
+                } tb:flex tb:flex-row tb:py-[12px] tb:pl-[28px] tb:border-[1px] tb:w-[281px] tb:items-start `}
                 onClick={toggleOverview}
               >
                 <span className="mr-[17px] hidden tb:block">01</span>OVERVIEW
@@ -284,6 +341,12 @@ export default function Planet() {
 
             <div className="buttons flex flex-col items-center ">
               <button
+                style={{
+                  backgroundColor: structureClicked
+                    ? planet?.rectangleColor
+                    : "",
+                  border: structureClicked ? planet?.rectangleColor : "",
+                }}
                 className={`${
                   structureClicked ? "text-[#FFFFFF]" : "text-[#FFFFFF]/50"
                 } tb:flex tb:flex-row tb:py-[12px] tb:pl-[28px] tb:border-[1px] tb:w-[281px] tb:items-start `}
@@ -300,6 +363,10 @@ export default function Planet() {
             </div>
             <div className="buttons flex flex-col items-center  ">
               <button
+                style={{
+                  backgroundColor: surfaceClicked ? planet?.rectangleColor : "",
+                  border: surfaceClicked ? planet?.rectangleColor : "",
+                }}
                 className={`${
                   surfaceClicked ? "text-[#FFFFFF]" : "text-[#FFFFFF]/50"
                 } tb:flex tb:flex-row tb:py-[12px] tb:pl-[28px] tb:border-[1px] tb:w-[281px] tb:items-start`}
