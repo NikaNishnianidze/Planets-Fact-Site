@@ -6,9 +6,18 @@ import data from "../data.json";
 
 export default function Header() {
   const [show, setShow] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<string | null>(null);
 
   const toggleNavigation = () => {
     setShow(!show);
+  };
+
+  const handleMouseEnter = (planetName: string) => {
+    setIsHovered(planetName);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(null);
   };
 
   return (
@@ -39,7 +48,11 @@ export default function Header() {
                   key={planet.name}
                   className="planents flex flex-row justify-between items-center  border-b-[1px] border-b-[#FFFFFF]/20 py-[20px] tb:border-none"
                 >
-                  <div className="planet-name flex flex-row gap-[25px]">
+                  <div
+                    onMouseEnter={() => handleMouseEnter(planet.name)}
+                    onMouseLeave={handleMouseLeave}
+                    className="planet-name flex flex-row gap-[25px]"
+                  >
                     <img
                       className="tb:hidden"
                       style={{
@@ -50,9 +63,15 @@ export default function Header() {
                     />
                     <li
                       key={planet.name}
-                      className="text-[#fff] text-[15px] font-bold tracking-[1.36px] tb:text-[11px] "
+                      className="text-[#fff] text-[15px] font-bold tracking-[1.36px] tb:text-[11px] flex flex-col items-center justify-center"
                     >
                       <Link to={planet.name}>{planet.name}</Link>
+                      {isHovered === planet.name && (
+                        <div
+                          style={{ backgroundColor: planet?.rectangleColor }}
+                          className={`mb:hidden dk:block tb:hidden dk:w-[50px] dk:h-[5px] dk:absolute dk:top-[1px]`}
+                        ></div>
+                      )}
                     </li>
                   </div>
                   <div className="arrow tb:hidden">

@@ -33,11 +33,11 @@ export default function Planet() {
         <div
           className={`info flex flex-row justify-between items-center py-[20px] px-[24px] border-b-[1px] border-b-[#FFFFFF]/20 tb:border-none tb:flex-col tb:gap-[16px] `}
         >
-          <div className="buttons flex flex-col items-center ">
+          <div className="buttons flex flex-col items-center  ">
             <button
               className={`${
                 overviewClicked ? "text-[#FFFFFF]" : "text-[#FFFFFF]/50"
-              } tb:flex tb:flex-row tb:py-[12px] tb:pl-[28px] tb:border-[1px] tb:w-[281px] tb:items-start`}
+              } tb:flex tb:flex-row tb:py-[12px]  tb:pl-[28px] tb:border-[1px] tb:w-[281px] tb:items-start`}
               onClick={toggleOverview}
             >
               <span className="mr-[17px] hidden tb:block">01</span>OVERVIEW

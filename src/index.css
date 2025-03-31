@@ -2,6 +2,7 @@
 
 @theme {
   --color-nav: #070724;
+  --color-hover: #d8d8d8;
 
   --breakpoint-mb: 375px;
   --breakpoint-tb: 768px;
