@@ -164,7 +164,7 @@ export default function Planet() {
             <img src={sourceIcon} alt="link image" />
           </div>
         </div>
-        <div className="general-info-box flex flex-col items-center justify-center mt-[28px] px-[24px] mb-[47px] gap-[8px]">
+        <div className="general-info-box hidden flex flex-col items-center justify-center mt-[28px] px-[24px] mb-[47px] gap-[8px]">
           <div className="box w-[327px] px-[24px] pt-[9px] pb-[13px] border-[1px] border-[#FFFFFF]/20 flex flex-row justify-between items-center">
             <p className="font-bold text-[#fff]/50 text-[8px] tracking-[0.73px]">
               ROTATION TIME
@@ -412,7 +412,7 @@ export default function Planet() {
           </div>
         </div>
       </div>
-      <div className="general-info-box flex flex-col items-center justify-center mt-[28px] px-[24px] mb-[47px] gap-[8px] tb:flex-row tb:gap-[11px] tb:px-[40px] dk:mt-[222px] dk:px-[165px] dk:mb-[56px]">
+      <div className="general-info-box  flex flex-col items-center justify-center mt-[28px] px-[24px] mb-[47px] gap-[8px] tb:flex-row tb:gap-[11px] tb:px-[40px] dk:mt-[222px] dk:px-[165px] dk:mb-[56px] ">
         <div className="box w-[327px] px-[24px] pt-[9px] pb-[13px] border-[1px] border-[#FFFFFF]/20 flex flex-row justify-between items-center tb:flex-col tb:items-start tb:pt-[16] tb:pl-[15px] tb:pb-[19px] dk:pt-[20px] dk:pl-[23px] dk:pb-[27px]">
           <p className="font-bold text-[#fff]/50 text-[8px] tracking-[0.73px]  dk:text-[11px]">
             ROTATION TIME
